@@ -35,7 +35,7 @@ class Song
       @@song_genres[genre] ||= 0
       @@song_genres[genre] += 1
     end
-    
+    @@song_genres
   end
   
     def self.song_count
