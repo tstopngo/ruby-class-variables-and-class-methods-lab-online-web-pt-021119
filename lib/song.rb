@@ -1,9 +1,9 @@
 class Song
-  @@song_count = 0
-  @@song_artists = []
-  @@song_genres = []
-  @@song_genre_count = {}
-  @@song_artist_count = {}
+  @@count = 0
+  @@artists = []
+  @@genres = []
+  @@genre_count = {}
+  @@artist_count = {}
     
   attr_accessor :name, :artist, :genre
   
@@ -12,9 +12,9 @@ class Song
     @artist = artist
     @genre = genre
     
-    @@song_count += 1
-    @@song_artists <<  @artist
-    @@song_genres << @genre
+    @@count += 1
+    @@artists <<  @artist
+    @@genres << @genre
     
   end
   
@@ -23,23 +23,23 @@ class Song
   end
   
   def self.artists
-    @@song_artists & @@song_artists
+    @@artists & @@artists
   end
   
   def self.genres
-    @@song_genres & @@song_genres
+    @@genres & @@genres
   end
   
   def self.genre_count
     @@song_genres.each do |genre|
-      @@song_genre_count[genre] ||= 0
-      @@song_genre_count[genre] += 1
+      @@genre_count[genre] ||= 0
+      @@genre_count[genre] += 1
     end
-    @@song_genre_count
+    @@genre_count
   end
   
   def self.song_count
-    @@song_artist_count
+    @@artist_count
   end
     
 end
