@@ -32,10 +32,6 @@ class Song
   
   def self.genre_count
     @@song_genres.each do |genre|
-      
-      if @@song_genre_count.keys.include?(genre)
-      
-      
     @@song_genre_count
   end
   
